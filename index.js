@@ -1,13 +1,33 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  // for(let i = 0;i<array.length;i++){
+  //   for(let j = i+1; j < array.length; j++){
+  //     if(array[i] + array[j] === target){
+  //       return true
+  //     }
+  //   }
+  // }
+  // return false
+  set = {}
+  for(let i = 0;i<array.length;i++){
+    let complement = target - array[i]
+    if(complement in set){return true}
+    set[array[i]] = true
+  }
+  return false
 }
 
 /* 
   Write the Big O time complexity of your function here
+  O(n^2) {solution 1}
+  O(n){solution 2 with set}
 */
 
 /* 
   Add your pseudocode here
+  itterate over an array that also has a nested array
+  return true if any two numbers add to target
+  otherwise return false
 */
 
 /*
